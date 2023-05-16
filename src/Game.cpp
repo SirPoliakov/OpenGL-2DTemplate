@@ -1,7 +1,5 @@
-﻿﻿#include "Game.hpp"
+﻿#include "Game.hpp"
 #include "Actor.hpp"
-#include "FPSActor.hpp"
-#include "FollowActor.hpp"
 #include "Assets.hpp"
 #include "Timer.hpp"
 
@@ -11,29 +9,21 @@ bool Game::initialize()
 {
 	bool isWindowInit = window.initialize();
 	bool isRendererInit = renderer.initialize(window);
+	bool isInputInit = inputSystem.initialize();
 
-	return isWindowInit && isRendererInit && isAudioInit && isInputInit; // Return bool && bool && bool ...to detect error
+	return isWindowInit && isRendererInit && isInputInit; // Return bool && bool && bool ...to detect error
 }
 
 void Game::load()
 {
-	inputSystem.setMouseRelativeMode(true);
-
-	//v =============================================================╗
-	//v Load Shaders/Textures                               
+	inputSystem.setMouseRelativeMode(true);                          
 
 	// SHADERS ==============================
 	Assets::loadShader("Res\\Shaders\\Sprite.vert", "Res\\Shaders\\Sprite.frag", "", "", "", "Sprite");
 
+
+
 	// TEXTURES =============================
-	// -- Basic textures --
-
-
-
-	//^ Load Shaders/Textures                                
-	//^ =============================================================╝
-
-	loadStates();
 }
 
 void Game::processInput()
@@ -50,20 +40,19 @@ void Game::processInput()
 	inputSystem.update();
 	const InputState& input = inputSystem.getInputState();
 
-		// Escape: quit game
-		if (input.keyboard.getKeyState(SDL_SCANCODE_ESCAPE) == ButtonState::Released)
-		{
-			isRunning = false;
-		}
+	// Escape: quit game
+	if (input.keyboard.getKeyState(SDL_SCANCODE_ESCAPE) == ButtonState::Released)
+	{
+		isRunning = false;
+	}
 
-		// Actor input
-		isUpdatingActors = true;
-		for (auto actor : actors)
-		{
-			actor->processInput(input);
-		}
-		isUpdatingActors = false;
-S
+	// Actor input
+	isUpdatingActors = true;
+	for (auto actor : actors)
+	{
+		actor->processInput(input);
+	}
+	isUpdatingActors = false;
 }
 
 void Game::update(float dt)
@@ -88,7 +77,7 @@ void Game::update(float dt)
 	pendingActors.clear();
 
 	// Delete dead actors
-	vector<Actor*> deadActors;
+	std::vector<Actor*> deadActors;
 	for (auto actor : actors)
 	{
 		if (actor->getState() == Actor::ActorState::Dead)
@@ -145,15 +134,8 @@ void Game::close()
 {
 	inputSystem.close();
 	renderer.close();
-	audioSystem.close();
 	window.close();
 	SDL_Quit();
-}
-
-void Game::setState(GameState stateP)
-{
-	state = stateP;
-	loadStates();
 }
 
 void Game::addActor(Actor* actor)

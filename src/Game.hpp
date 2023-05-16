@@ -3,7 +3,7 @@
 #include "Actor.hpp"
 #include "SpriteComponent.hpp"
 #include "Window.hpp"
-#include "Vector2.hpp"
+#include "Vector3.hpp"
 #include "RendererOGL.hpp"
 #include "InputSystem.hpp"
 

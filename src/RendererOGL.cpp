@@ -6,7 +6,6 @@
 #include "Assets.hpp"
 #include "Actor.hpp"
 #include "SpriteComponent.hpp"
-#include "MeshComponent.hpp"
 #include "Log.hpp"
 
 
@@ -68,30 +67,6 @@ bool RendererOGL::initialize(Window& windowP)
 	return true;
 }
 
-void RendererOGL::beginDraw()
-{
-	glClearColor(0.45f, 0.45f, 1.0f, 1.0f);
-	// Clear the color and depth buffer
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-void RendererOGL::draw()
-{
-	//Existence du pattern: Pourra ulterieurement appeler d'autres assets a draw comme des meshes ici en plus des sprites
-	drawSprites();
-}
-
-void RendererOGL::endDraw()
-{
-	SDL_GL_SwapWindow(window->getSDLWindow());
-}
-
-void RendererOGL::close()
-{
-	delete spriteVertexArray;
-	SDL_GL_DeleteContext(context);
-}
-
 void RendererOGL::addSprite(SpriteComponent* sprite)
 {
 	// Insert the sprite at the right place in function of drawOrder
@@ -108,6 +83,19 @@ void RendererOGL::removeSprite(SpriteComponent* sprite)
 {
 	auto iter = std::find(begin(sprites), end(sprites), sprite);
 	sprites.erase(iter);
+}
+
+void RendererOGL::beginDraw()
+{
+	glClearColor(0.45f, 0.45f, 1.0f, 1.0f);
+	// Clear the color and depth buffer
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void RendererOGL::draw()
+{
+	//Draw() into drawSprites() into drawSprites(): Pourra ulterieurement appeler d'autres assets a draw comme des meshes ici en plus des sprites
+	drawSprites();
 }
 
 void RendererOGL::drawSprites()
@@ -142,6 +130,21 @@ void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Rectangle s
 	tex.setActive();
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 }
+
+void RendererOGL::endDraw()
+{
+	SDL_GL_SwapWindow(window->getSDLWindow());
+}
+
+void RendererOGL::close()
+{
+	delete spriteVertexArray;
+	SDL_GL_DeleteContext(context);
+}
+
+
+
+
 
 
 void RendererOGL::setViewMatrix(const Matrix4& viewP)

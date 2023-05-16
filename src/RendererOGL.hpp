@@ -1,7 +1,8 @@
 #pragma once
 #include "IRenderer.hpp"
 #include "VertexArray.hpp"
-#include "Vector2.hpp"
+#include "Vector3.hpp"
+#include "Matrix4.hpp"
 #include "Shader.hpp"
 #include <vector>
 
@@ -29,8 +30,6 @@ public:
 	void removeMesh(class MeshComponent* mesh);
 
 	void setViewMatrix(const Matrix4& viewP);
-	void setLightUniforms(Shader& shader);
-	void setAmbientLight(const Vector3& ambientP);
 
 private:
 	

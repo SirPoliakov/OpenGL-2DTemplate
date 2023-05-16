@@ -112,7 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image2.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,15 +132,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Assets.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="KeyboardState.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Matrix4.cpp" />
+    <ClCompile Include="MouseState.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RendererOGL.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.hpp" />
+    <ClInclude Include="Assets.hpp" />
+    <ClInclude Include="Component.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="InputSystem.hpp" />
     <ClInclude Include="IRenderer.hpp" />
+    <ClInclude Include="KeyboardState.hpp" />
+    <ClInclude Include="Log.hpp" />
+    <ClInclude Include="Maths.hpp" />
+    <ClInclude Include="Matrix4.hpp" />
+    <ClInclude Include="MouseState.hpp" />
+    <ClInclude Include="Rectangle.hpp" />
     <ClInclude Include="RendererOGL.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="SpriteComponent.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="Vector2.hpp" />
+    <ClInclude Include="Vector3.hpp" />
+    <ClInclude Include="VertexArray.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
