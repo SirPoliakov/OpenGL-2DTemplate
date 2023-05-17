@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.hpp" />
     <ClInclude Include="Assets.hpp" />
+    <ClInclude Include="BackGroundSprite.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="InputSystem.hpp" />
