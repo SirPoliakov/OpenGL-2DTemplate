@@ -37,14 +37,13 @@ public:
 	void setRotation(Vector3 rotationP);
 	void setState(ActorState stateP);
 
-	void setAngle(const Vector3& axis, float angle);
+	//void setAngle(const Vector3& axis, float angle);
 	void rotate(const Vector3& axis, float angle);
 	void computeWorldTransform();
 
 	void processInput(const struct InputState& inputState);
 	virtual void actorInput(const struct InputState& inputState);
 	void update(float dt);
-	virtual void updateActor(float dt);
 
 	inline vector<Component*> getComponents() { return components; }
 

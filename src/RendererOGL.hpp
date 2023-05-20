@@ -24,12 +24,7 @@ public:
 
 	void addSprite(class SpriteComponent* sprite);
 	void removeSprite(class SpriteComponent* sprite);
-	void drawSprite(const class Actor& actor, const class Texture& tex, struct Rectangle srcRect, Vector2 origin, Flip flip) const;
-
-	void addMesh(class MeshComponent* mesh);
-	void removeMesh(class MeshComponent* mesh);
-
-	void setViewMatrix(const Matrix4& viewP);
+	void drawSprite(const class Actor& actor, const class Texture& tex, Vector2 origin, Flip flip) const;
 
 private:
 	
@@ -38,9 +33,7 @@ private:
 	Window* window;
 	SDL_GLContext context;
 	VertexArray* spriteVertexArray;
-	Matrix4 spriteViewProj;
-	Matrix4 view;
-	Matrix4 projection;
+	Matrix4 viewProj;
 
 	std::vector<class SpriteComponent*> sprites;
 

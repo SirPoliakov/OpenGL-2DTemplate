@@ -37,10 +37,13 @@ public:
 
 	void addActor(Actor* actor);
 	void removeActor(Actor* actor);
-	RendererOGL& getRenderer() { return renderer; }
+	RendererOGL& getRenderer() { return myRenderer; }
 
 
 	//v Game specifics ===============================================
+
+	Actor* myActor = nullptr;
+	SpriteComponent* tree = nullptr;
 
 	//^ Game specifics ===============================================
 
@@ -52,7 +55,7 @@ private:
 	bool isRunning;
 	
 	Window window;
-	RendererOGL renderer;
+	RendererOGL myRenderer;
 	InputSystem inputSystem;
 
 	bool isUpdatingActors;

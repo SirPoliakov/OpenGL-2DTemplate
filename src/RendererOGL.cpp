@@ -13,9 +13,7 @@ RendererOGL::RendererOGL() :
 	window{ nullptr },
 	context{ nullptr },
 	spriteVertexArray{ nullptr },
-	spriteViewProj{ Matrix4::createSimpleViewProj(WINDOW_WIDTH, WINDOW_HEIGHT) },
-	view{ Matrix4::createLookAt(Vector3::zero, Vector3::unitX, Vector3::unitZ) },
-	projection{ Matrix4::createPerspectiveFOV(Maths::toRadians(70.0f), WINDOW_WIDTH, WINDOW_HEIGHT, 10.0f, 10000.0f) }
+	viewProj{ Matrix4::createSimpleViewProj(WINDOW_WIDTH, WINDOW_HEIGHT) }
 {
 }
 
@@ -110,7 +108,7 @@ void RendererOGL::drawSprites()
 	// Active shader and vertex array
 	Shader& spriteShader = Assets::getShader("Sprite");
 	spriteShader.use();
-	spriteShader.setMatrix4("uViewProj", spriteViewProj);
+	spriteShader.setMatrix4("uViewProj", viewProj);
 	spriteVertexArray->setActive();
 
 	for (auto sprite : sprites)
@@ -122,7 +120,7 @@ void RendererOGL::drawSprites()
 	}
 }
 
-void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Rectangle srcRect, Vector2 origin, Flip flip) const
+void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Vector2 origin, Flip flip) const
 {
 	Matrix4 scaleMat = Matrix4::createScale((float)tex.getWidth(), (float)tex.getHeight(), 1.0f);
 	Matrix4 world = scaleMat * actor.getWorldTransform();
@@ -140,14 +138,4 @@ void RendererOGL::close()
 {
 	delete spriteVertexArray;
 	SDL_GL_DeleteContext(context);
-}
-
-
-
-
-
-
-void RendererOGL::setViewMatrix(const Matrix4& viewP)
-{
-	view = viewP;
 }

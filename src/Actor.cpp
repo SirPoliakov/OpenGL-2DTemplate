@@ -97,8 +97,6 @@ void Actor::update(float dt)
 	{
 		computeWorldTransform();
 		updateComponents(dt);
-		updateActor(dt);
-		computeWorldTransform();
 	}
 }
 
@@ -120,9 +118,6 @@ void Actor::updateComponents(float dt)
 	}
 }
 
-void Actor::updateActor(float dt)
-{
-}
 
 void Actor::addComponent(Component* component)
 {

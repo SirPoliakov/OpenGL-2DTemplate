@@ -1,2 +1,6 @@
-﻿  Vector3.cpp
-  src.vcxproj -> D:\2023-2024\GIT\OpenGL-2DTemplate\x64\Debug\src.exe
+﻿  Actor.cpp
+  Game.cpp
+  Main.cpp
+  SpriteComponent.cpp
+  Génération de code en cours...
+  src.vcxproj -> C:\Users\jujuy\Documents\Git\OpenGL-2DTemplate\x64\Debug\src.exe

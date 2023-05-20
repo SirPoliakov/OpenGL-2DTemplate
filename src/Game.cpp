@@ -5,10 +5,11 @@
 
 
 
+
 bool Game::initialize()
 {
 	bool isWindowInit = window.initialize();
-	bool isRendererInit = renderer.initialize(window);
+	bool isRendererInit = myRenderer.initialize(window);
 	bool isInputInit = inputSystem.initialize();
 
 	return isWindowInit && isRendererInit && isInputInit; // Return bool && bool && bool ...to detect error
@@ -16,14 +17,18 @@ bool Game::initialize()
 
 void Game::load()
 {
-	inputSystem.setMouseRelativeMode(true);                          
+	inputSystem.setMouseRelativeMode(true);
 
 	// SHADERS ==============================
-	Assets::loadShader("Res\\Shaders\\Sprite.vert", "Res\\Shaders\\Sprite.frag", "", "", "", "Sprite");
-
-
+	Assets::loadShader("Rsc\\Shaders\\Sprite.vert", "Res\\Shaders\\Sprite.frag", "", "", "", "Sprite");
 
 	// TEXTURES =============================
+	Assets::loadTexture(myRenderer, "Rsc\\Textures\\Tree.bmp", "Tree");
+
+	myActor = new Actor();
+	tree = new SpriteComponent(myActor, Assets::getTexture("Tree"), 1);
+	myActor->addComponent(tree);
+
 }
 
 void Game::processInput()
@@ -97,9 +102,9 @@ void Game::update(float dt)
 
 void Game::render()
 {
-	renderer.beginDraw();
-	renderer.draw();
-	renderer.endDraw();
+	myRenderer.beginDraw();
+	myRenderer.draw();
+	myRenderer.endDraw();
 }
 
 
@@ -133,7 +138,7 @@ void Game::unload()
 void Game::close()
 {
 	inputSystem.close();
-	renderer.close();
+	myRenderer.close();
 	window.close();
 	SDL_Quit();
 }

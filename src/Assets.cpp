@@ -4,7 +4,7 @@
 #include <fstream>
 #include "Log.hpp"
 #include "RendererOGL.hpp"
-#include <rapidjson/document.h>
+#include  <rapidjson.h>
 
 std::map<std::string, Texture> Assets::textures;
 std::map<std::string, Shader> Assets::shaders;
@@ -58,15 +58,9 @@ void Assets::clear()
 Texture Assets::loadTextureFromFile(IRenderer& renderer, const string& filename)
 {
     Texture texture;
-    // Not very elegant, but simpler architecture
-    if (renderer.type() == IRenderer::Type::SDL)
-    {
-        //texture.loadSDL(dynamic_cast<RendererSDL&>(renderer), filename);
-    }
-    else if (renderer.type() == IRenderer::Type::OGL)
-    {
-        texture.loadOGL(dynamic_cast<RendererOGL&>(renderer), filename);
-    }
+  
+    texture.loadOGL(dynamic_cast<RendererOGL&>(renderer), filename);
+
     return texture;
 }
 
