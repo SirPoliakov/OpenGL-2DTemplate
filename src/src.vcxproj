@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\jujuy\Documents\Git\SDL\SDL2-2.0.12\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_ttf-2.0.15\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_mixer-2.0.4\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_image-2.0.5\include;C:\Users\jujuy\Documents\Git\SDL\rapidjson\include\rapidjson;C:\Users\jujuy\Documents\Git\SDL\glew-2.1.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\jujuy\Documents\Git\SDL\SDL2-2.0.12\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_ttf-2.0.15\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_mixer-2.0.4\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_image-2.0.5\lib\x64;C:\Users\jujuy\Documents\Git\SDL\glew-2.1.0\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Ben\Documents\Prog\SDL\SDL2-2.0.12\include;C:\Users\Ben\Documents\Prog\SDL\SDL2_ttf-2.0.15\include;C:\Users\Ben\Documents\Prog\SDL\SDL2_mixer-2.0.4\include;C:\Users\Ben\Documents\Prog\SDL\SDL2_image-2.0.5\include;C:\Users\Ben\Documents\Prog\SDL\rapidjson\include\rapidjson;C:\Users\Ben\Documents\Prog\SDL\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Ben\Documents\Prog\SDL\SDL2-2.0.12\lib\x64;C:\Users\Ben\Documents\Prog\SDL\SDL2_ttf-2.0.15\lib\x64;C:\Users\Ben\Documents\Prog\SDL\SDL2_mixer-2.0.4\lib\x64;C:\Users\Ben\Documents\Prog\SDL\SDL2_image-2.0.5\lib\x64;C:\Users\Ben\Documents\Prog\SDL\glew-2.1.0\lib\Release\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
