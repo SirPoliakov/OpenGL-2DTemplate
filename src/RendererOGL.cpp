@@ -2,7 +2,6 @@
 #include <SDL_image.h>
 
 #include "RendererOGL.hpp"
-#include "Rectangle.hpp"
 #include "Assets.hpp"
 #include "Actor.hpp"
 #include "SpriteComponent.hpp"
@@ -115,17 +114,19 @@ void RendererOGL::drawSprites()
 	{
 		if (sprite->getVisible())
 		{
-			sprite->draw(*this);
+			sprite->draw(*this); 
 		}
 	}
 }
 
 void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Vector2 origin, Flip flip) const
 {
+	tex.setActive();
+	Assets::getShader("Sprite").setInteger("uTexture", 0);
 	Matrix4 scaleMat = Matrix4::createScale((float)tex.getWidth(), (float)tex.getHeight(), 1.0f);
 	Matrix4 world = scaleMat * actor.getWorldTransform();
 	Assets::getShader("Sprite").setMatrix4("uWorldTransform", world);
-	tex.setActive();
+	
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 }
 

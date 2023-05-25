@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\jujuy\Documents\Git\SDL\SDL2-2.0.12\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_ttf-2.0.15\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_mixer-2.0.4\include;C:\Users\jujuy\Documents\Git\SDL\SDL2_image-2.0.5\include;C:\Users\jujuy\Documents\Git\SDL\rapidjson\include\rapidjson;C:\Users\jujuy\Documents\Git\SDL\glew-2.1.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\jujuy\Documents\Git\SDL\SDL2-2.0.12\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_ttf-2.0.15\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_mixer-2.0.4\lib\x64;C:\Users\jujuy\Documents\Git\SDL\SDL2_image-2.0.5\lib\x64;C:\Users\jujuy\Documents\Git\SDL\glew-2.1.0\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\2023-2024\GIT\SDL\SDL2-2.0.12\include;D:\2023-2024\GIT\SDL\SDL2_ttf-2.0.15\include;D:\2023-2024\GIT\SDL\SDL2_mixer-2.0.4\include;D:\2023-2024\GIT\SDL\SDL2_image-2.0.5\include;D:\2023-2024\GIT\SDL\rapidjson\include\rapidjson;D:\2023-2024\GIT\SDL\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\2023-2024\GIT\SDL\SDL2-2.0.12\lib\x64;D:\2023-2024\GIT\SDL\SDL2_ttf-2.0.15\lib\x64;D:\2023-2024\GIT\SDL\SDL2_mixer-2.0.4\lib\x64;D:\2023-2024\GIT\SDL\SDL2_image-2.0.5\lib\x64;D:\2023-2024\GIT\SDL\glew-2.1.0\lib\Release\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -144,7 +144,6 @@
     <ClCompile Include="Matrix4.cpp" />
     <ClCompile Include="MouseState.cpp" />
     <ClCompile Include="MoveComponent.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RendererOGL.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
@@ -169,7 +168,6 @@
     <ClInclude Include="Matrix4.hpp" />
     <ClInclude Include="MouseState.hpp" />
     <ClInclude Include="MoveComponent.hpp" />
-    <ClInclude Include="Rectangle.hpp" />
     <ClInclude Include="RendererOGL.hpp" />
     <ClInclude Include="Shader.hpp" />
     <ClInclude Include="SpriteComponent.hpp" />

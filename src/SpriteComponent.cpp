@@ -1,7 +1,6 @@
 #include "SpriteComponent.hpp"
 #include "Actor.hpp"
 #include "Game.hpp"
-#include "Rectangle.hpp"
 
 SpriteComponent::SpriteComponent(Actor* ownerP, Texture& textureP, int drawOrderP) :
 	Component(ownerP),
@@ -28,6 +27,7 @@ void SpriteComponent::setTexture(const Texture& textureP)
 void SpriteComponent::draw(IRenderer& renderer)
 {
 	Vector2 origin{ texWidth / 2.f, texHeight / 2.f };
+
 	renderer.drawSprite(owner, texture, origin, IRenderer::Flip::None);
 }
 

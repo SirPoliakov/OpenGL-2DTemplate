@@ -2,11 +2,11 @@
 #include <GL/glew.h>
 
 VertexArray::VertexArray(const float* verticesP, unsigned int nbVerticesP, const unsigned int* indicesP, unsigned int nbIndicesP) :
-	nbVertices(nbVerticesP), nbIndices(nbIndicesP), vertexBuffer(0), indexBuffer(0), vertexArray(0)
+	nbVertices(nbVerticesP), nbIndices(nbIndicesP), vertexBuffer(0), indexBuffer(0), vao(0)
 {
 	// Create vertex array
-	glGenVertexArrays(1, &vertexArray);
-	glBindVertexArray(vertexArray);
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
 
 	// Create vertex buffer
 	glGenBuffers(1, &vertexBuffer);
@@ -35,10 +35,10 @@ VertexArray::~VertexArray()
 {
 	glDeleteBuffers(1, &vertexBuffer);
 	glDeleteBuffers(1, &indexBuffer);
-	glDeleteVertexArrays(1, &vertexArray);
+	glDeleteVertexArrays(1, &vao);
 }
 
 void VertexArray::setActive()
 {
-	glBindVertexArray(vertexArray);
+	glBindVertexArray(vao);
 }
