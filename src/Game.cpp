@@ -20,10 +20,10 @@ void Game::load()
 	inputSystem.setMouseRelativeMode(true);
 
 	// SHADERS ==============================
-	Assets::loadShader("D:\\2023-2024\GIT\\OpenGL-2DTemplate\\src\\Rsc\\Shaders\\Sprite.vert", "D:\\2023-2024\GIT\\OpenGL-2DTemplate\\src\\Rsc\\Shaders\\Sprite.frag", "", "", "", "Sprite");
+	Assets::loadShader("Rsc\\Shaders\\Sprite.vert", "Rsc\\Shaders\\Sprite.frag", "", "", "", "Sprite");
 
 	// TEXTURES =============================
-	Assets::loadTexture(myRenderer, "D:\\2023-2024\\GIT\\OpenGL-2DTemplate\\src\\Rsc\\Textures\\Tree.bmp", "Tree");
+	Assets::loadTexture(myRenderer, "Rsc\\Textures\\Tree.bmp", "Tree");
 	//Assets::getTexture("Tree").setActive();
 
 	myActor = new Actor();

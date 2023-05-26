@@ -20,10 +20,7 @@ Actor::~Actor()
 	game.removeActor(this);
 	// Need to delete components
 	// Because ~Component calls RemoveComponent, need a different style loop
-	while (!components.empty())
-	{
-		delete components.back();
-	}
+	
 }
 
 void Actor::setPosition(Vector3 positionP)

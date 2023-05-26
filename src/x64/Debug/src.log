@@ -1,6 +1,26 @@
 ﻿  Actor.cpp
+  Assets.cpp
+  BackgroundSpriteComponent.cpp
+  Component.cpp
   Game.cpp
+  InputSystem.cpp
+  KeyboardState.cpp
+  Log.cpp
   Main.cpp
+  Matrix4.cpp
+  MouseState.cpp
+  MoveComponent.cpp
+  RendererOGL.cpp
+  Shader.cpp
   SpriteComponent.cpp
-  Génération de code en cours...
-  src.vcxproj -> C:\Users\jujuy\Documents\Git\OpenGL-2DTemplate\x64\Debug\src.exe
+  Texture.cpp
+  Time.cpp
+  Vector2.cpp
+  Vector3.cpp
+  VertexArray.cpp
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\VertexArray.cpp(14,49): warning C4244: 'argument': conversion from 'double' to 'GLsizeiptr', possible loss of data
+  Generating Code...
+  Compiling...
+  Window.cpp
+  Generating Code...
+  src.vcxproj -> D:\2023-2024\GIT\OpenGL-2DTemplate\x64\Debug\src.exe
