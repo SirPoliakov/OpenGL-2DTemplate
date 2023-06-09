@@ -43,8 +43,11 @@ public:
 	//v Game specifics ===============================================
 
 	Actor* myActor = nullptr;
+	Actor* myActor2 = nullptr;
+	Actor* myActor3 = nullptr;
 	SpriteComponent* tree = nullptr;
-
+	SpriteComponent* car = nullptr;
+	SpriteComponent* concrete = nullptr;
 	//^ Game specifics ===============================================
 
 private:

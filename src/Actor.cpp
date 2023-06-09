@@ -53,10 +53,13 @@ void Actor::computeWorldTransform()
 	if (mustRecomputeWorldTransform)
 	{
 		mustRecomputeWorldTransform = false;
+		
 		worldTransform = Matrix4::createScale(scale);
+		worldTransform *= Matrix4::createTranslation(position);
 		float theta = Maths::acos(rotation.x);
 		worldTransform *= Matrix4::createRotationX(theta);
-		worldTransform *= Matrix4::createTranslation(position);
+		
+		
 
 		for (auto component : components)
 		{

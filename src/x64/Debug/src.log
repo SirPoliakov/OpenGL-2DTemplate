@@ -1,26 +1,25 @@
 ﻿  Actor.cpp
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): error C2259: 'RendererOGL': cannot instantiate abstract class
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\RendererOGL.hpp(10): message : see declaration of 'RendererOGL'
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : due to following members:
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : 'void IRenderer::drawSprite(const Actor &,const Texture &,Vector2,IRenderer::Flip) const': is abstract
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\IRenderer.hpp(26): message : see declaration of 'IRenderer::drawSprite'
   Assets.cpp
   BackgroundSpriteComponent.cpp
-  Component.cpp
   Game.cpp
-  InputSystem.cpp
-  KeyboardState.cpp
-  Log.cpp
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): error C2259: 'RendererOGL': cannot instantiate abstract class
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\RendererOGL.hpp(10): message : see declaration of 'RendererOGL'
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : due to following members:
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : 'void IRenderer::drawSprite(const Actor &,const Texture &,Vector2,IRenderer::Flip) const': is abstract
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\IRenderer.hpp(26): message : see declaration of 'IRenderer::drawSprite'
   Main.cpp
-  Matrix4.cpp
-  MouseState.cpp
-  MoveComponent.cpp
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Main.cpp : fatal  error C1041: cannot open program database 'D:\2023-2024\GIT\OpenGL-2DTemplate\src\x64\Debug\vc143.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   RendererOGL.cpp
-  Shader.cpp
   SpriteComponent.cpp
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): error C2259: 'RendererOGL': cannot instantiate abstract class
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\RendererOGL.hpp(10): message : see declaration of 'RendererOGL'
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : due to following members:
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\Game.hpp(61,14): message : 'void IRenderer::drawSprite(const Actor &,const Texture &,Vector2,IRenderer::Flip) const': is abstract
+D:\2023-2024\GIT\OpenGL-2DTemplate\src\IRenderer.hpp(26): message : see declaration of 'IRenderer::drawSprite'
   Texture.cpp
-  Time.cpp
-  Vector2.cpp
-  Vector3.cpp
-  VertexArray.cpp
-D:\2023-2024\GIT\OpenGL-2DTemplate\src\VertexArray.cpp(14,49): warning C4244: 'argument': conversion from 'double' to 'GLsizeiptr', possible loss of data
   Generating Code...
-  Compiling...
-  Window.cpp
-  Generating Code...
-  src.vcxproj -> D:\2023-2024\GIT\OpenGL-2DTemplate\x64\Debug\src.exe

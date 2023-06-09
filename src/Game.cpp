@@ -24,12 +24,23 @@ void Game::load()
 
 	// TEXTURES =============================
 	Assets::loadTexture(myRenderer, "Rsc\\Textures\\Tree.bmp", "Tree");
+	Assets::loadTexture(myRenderer, "Rsc\\Textures\\Car.bmp", "Car");
+	//Assets::loadTexture(myRenderer, "Rsc\\Textures\\concrete.bmp", "Concrete");
 	//Assets::getTexture("Tree").setActive();
 
 	myActor = new Actor();
 	tree = new SpriteComponent(myActor, Assets::getTexture("Tree"), 1);
 	myActor->addComponent(tree);
 
+	myActor2 = new Actor();
+	car = new SpriteComponent(myActor2, Assets::getTexture("Car"), 1);
+	myActor2->addComponent(car);
+
+	myActor->setScale(1.0); myActor2->setScale(1.0);
+
+	//myActor3 = new Actor();
+	//concrete = new SpriteComponent(myActor3, Assets::getTexture("Concrete"), 1);
+	//myActor3->addComponent(car);
 }
 
 void Game::processInput()

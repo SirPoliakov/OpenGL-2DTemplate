@@ -24,7 +24,7 @@ public:
 
 	void addSprite(class SpriteComponent* sprite);
 	void removeSprite(class SpriteComponent* sprite);
-	void drawSprite(const class Actor& actor, const class Texture& tex, Vector2 origin, Flip flip) const;
+	void drawSprite(class Actor& actor, const class Texture& tex, Vector2 origin, Flip flip) const;
 
 private:
 	

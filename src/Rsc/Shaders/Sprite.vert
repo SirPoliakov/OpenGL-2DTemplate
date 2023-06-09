@@ -15,12 +15,13 @@ void main()
 {
 	
 	// Transform to position world space, then clip space
-	//gl_Position = pos * uWorldTransform * uViewProj;
+	//
 	
 	
 	// Convert position to homogeneous coordinates
 	vec4 pos = vec4(inPosition, 1.0);
-	gl_Position = pos;
+	gl_Position = pos * uWorldTransform * uViewProj;
+	//gl_Position = pos;
 	
 	// Pass along the texture coordinate to frag shader
 	fragTexCoord = inTexCoord;
