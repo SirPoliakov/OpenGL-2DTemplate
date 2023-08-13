@@ -20,12 +20,12 @@ void Game::load()
 	inputSystem.setMouseRelativeMode(true);
 
 	// SHADERS ==============================
-	Assets::loadShader("Rsc\\Shaders\\Sprite.vert", "Res\\Shaders\\Sprite.frag", "", "", "", "Sprite");
+	Assets::loadShader("C:\\Users\\Ben\\Documents\\Prog\\GIT\\C++\\OpenGL-2DTemplate\\src\\Rsc\\Shaders\\Sprite.vert", "C:\\Users\\Ben\\Documents\\Prog\\GIT\\C++\\OpenGL-2DTemplate\\src\\Rsc\\Shaders\\Sprite.frag", "", "", "", "Sprite");
 
 	// TEXTURES =============================
-	Assets::loadTexture(myRenderer, "Rsc\\Textures\\Tree.bmp", "Tree");
+	Assets::loadTexture(myRenderer, "C:\\Users\\Ben\\Documents\\Prog\\GIT\\C++\\OpenGL-2DTemplate\\src\\Rsc\\Textures\\Tree.bmp", "Tree");
 
-	myActor = new Actor();
+	myActor = new Actor(Vector2(200.0f, 200.0f), Vector3::zero);
 	tree = new SpriteComponent(myActor, Assets::getTexture("Tree"), 1);
 	myActor->addComponent(tree);
 

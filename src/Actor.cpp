@@ -7,23 +7,28 @@
 Actor::Actor() :
 	state(Actor::ActorState::Active),
 	position(Vector3::zero),
-	scale(1.0f),
-	rotation(Vector3( 1.0f, 0.0f, 0.0f )),
+	scale(Vector2::zero),
+	rotation(0.0f),
+	mustRecomputeWorldTransform(true),
+	game(Game::instance())
+{
+	game.addActor(this);
+}
+Actor::Actor(Vector2 _Scale, Vector3 _Pos ) :
+	state(Actor::ActorState::Active),
+	position(_Pos),
+	scale(_Scale),
+	rotation(0.0f),
 	mustRecomputeWorldTransform(true),
 	game(Game::instance())
 {
 	game.addActor(this);
 }
 
+
 Actor::~Actor()
 {
 	game.removeActor(this);
-	// Need to delete components
-	// Because ~Component calls RemoveComponent, need a different style loop
-	while (!components.empty())
-	{
-		delete components.back();
-	}
 }
 
 void Actor::setPosition(Vector3 positionP)
@@ -32,13 +37,13 @@ void Actor::setPosition(Vector3 positionP)
 	mustRecomputeWorldTransform = true;
 }
 
-void Actor::setScale(float scaleP)
+void Actor::setScale(Vector2 scaleP)
 {
 	scale = scaleP;
 	mustRecomputeWorldTransform = true;
 }
 
-void Actor::setRotation(Vector3 rotationP)
+void Actor::setRotation(float rotationP)
 {
 	rotation += rotationP;
 	mustRecomputeWorldTransform = true;
@@ -46,9 +51,8 @@ void Actor::setRotation(Vector3 rotationP)
 
 void Actor::rotate(const Vector3& axis, float angle)
 {
-	float _x = cos(angle) - axis.x;
-	float _y = sin(angle) - axis.y;  //A voir s'il ne faut pas -sin(y)
-	setRotation(Vector3( _x,_y, 0.0f));
+	rotation += angle;
+	mustRecomputeWorldTransform = true;
 }
 
 void Actor::computeWorldTransform()
@@ -56,9 +60,11 @@ void Actor::computeWorldTransform()
 	if (mustRecomputeWorldTransform)
 	{
 		mustRecomputeWorldTransform = false;
-		worldTransform = Matrix4::createScale(scale);
-		float theta = Maths::acos(rotation.x);
-		worldTransform *= Matrix4::createRotationX(theta);
+
+		Vector3 vec3 = Vector3::zero; vec3.x = scale.x; vec3.y = scale.y;
+
+		worldTransform = Matrix4::createScale(vec3);
+		worldTransform *= Matrix4::createRotationZ(rotation);
 		worldTransform *= Matrix4::createTranslation(position);
 
 		for (auto component : components)

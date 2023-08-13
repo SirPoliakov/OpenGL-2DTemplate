@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Vector2.hpp"
 #include "Vector3.hpp"
 #include <SDL_stdinc.h>
 #include "Matrix4.hpp"
@@ -22,6 +23,7 @@ public:
 	};
 
 	Actor();
+	Actor(Vector2 _Scale, Vector3 _Pos = Vector3::zero);
 	virtual ~Actor();
 	Actor(const Actor&) = delete;
 	Actor& operator=(const Actor&) = delete;
@@ -29,12 +31,12 @@ public:
 	Game& getGame() const { return game; }
 	const ActorState getState() const { return state; }
 	const Vector3 getPosition() const { return position; }
-	const float getScale() const { return scale; }
+	const Vector2 getScale() const { return scale; }
 	const Matrix4& getWorldTransform() const { return worldTransform; }
 
 	void setPosition(Vector3 positionP);
-	void setScale(float scaleP);
-	void setRotation(Vector3 rotationP);
+	void setScale(Vector2 scaleP);
+	void setRotation(float rotationP);
 	void setState(ActorState stateP);
 
 	//void setAngle(const Vector3& axis, float angle);
@@ -58,8 +60,8 @@ protected:
 	Game& game;
 	ActorState state;
 	Vector3 position;
-	Vector3 rotation;
-	float scale;
+	float rotation;
+	Vector2 scale;
 	Matrix4 worldTransform;
 	bool mustRecomputeWorldTransform;
 

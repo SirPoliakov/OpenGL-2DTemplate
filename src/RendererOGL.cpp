@@ -121,11 +121,12 @@ void RendererOGL::drawSprites()
 }
 
 void RendererOGL::drawSprite(const Actor& actor, const Texture& tex, Vector2 origin, Flip flip) const
-{
-	Matrix4 scaleMat = Matrix4::createScale((float)tex.getWidth(), (float)tex.getHeight(), 1.0f);
-	Matrix4 world = scaleMat * actor.getWorldTransform();
-	Assets::getShader("Sprite").setMatrix4("uWorldTransform", world);
+{	
 	tex.setActive();
+	Assets::getShader("Sprite").setInteger("uTexture", 0);
+	Matrix4 world = actor.getWorldTransform();
+	Assets::getShader("Sprite").setMatrix4("uWorldTransform", world);
+	
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 }
 

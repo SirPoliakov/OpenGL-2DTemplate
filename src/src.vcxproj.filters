@@ -153,4 +153,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Rsc\Shaders\Basic.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Rsc\Shaders\Basic.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Rsc\Shaders\Sprite.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Rsc\Shaders\Sprite.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

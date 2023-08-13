@@ -180,6 +180,12 @@
     <ClInclude Include="VertexArray.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Rsc\Shaders\Basic.frag" />
+    <None Include="Rsc\Shaders\Basic.vert" />
+    <None Include="Rsc\Shaders\Sprite.frag" />
+    <None Include="Rsc\Shaders\Sprite.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
